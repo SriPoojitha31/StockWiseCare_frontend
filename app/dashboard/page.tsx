@@ -1,11 +1,34 @@
+import axios from 'axios';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowUpRight, TrendingUp, BarChart3, Heart } from "lucide-react"
 import { PortfolioChart } from "@/components/features/dashboard/portfolio-chart"
 import { StockTable } from "@/components/features/dashboard/stock-table"
 import { SentimentAnalysis } from "@/components/features/ai-insights/sentiment-analysis"
+import  { useEffect, useState } from "react";
 
 export default function DashboardPage() {
+  const [portfolioValue, setPortfolioValue] = useState(null);
+  const [todaysGain, setTodaysGain] = useState(null);
+  const [charityDonations, setCharityDonations] = useState(null);
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/dashboard`);
+        const data = response.data;
+
+        setPortfolioValue(data.portfolioValue);
+        setTodaysGain(data.todaysGain);
+        setCharityDonations(data.charityDonations);
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
@@ -30,7 +53,7 @@ export default function DashboardPage() {
                 <TrendingUp className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$45,231.89</div>
+                <div className="text-2xl font-bold">{portfolioValue !== null ? `$${portfolioValue}` : "Loading..."}</div>
                 <p className="text-xs text-muted-foreground">
                   <span className="text-green-500 font-medium flex items-center">
                     +20.1% <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -45,7 +68,7 @@ export default function DashboardPage() {
                 <BarChart3 className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$2,350.45</div>
+                <div className="text-2xl font-bold">{todaysGain !== null ? `$${todaysGain}` : "Loading..."}</div>
                 <p className="text-xs text-muted-foreground">
                   <span className="text-green-500 font-medium flex items-center">
                     +5.2% <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -60,7 +83,7 @@ export default function DashboardPage() {
                 <Heart className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$1,205.75</div>
+                <div className="text-2xl font-bold">{charityDonations !== null ? `$${charityDonations}` : "Loading..."}</div>
                 <p className="text-xs text-muted-foreground">
                   <span className="text-green-500 font-medium flex items-center">
                     +12.5% <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -127,5 +150,5 @@ export default function DashboardPage() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }
