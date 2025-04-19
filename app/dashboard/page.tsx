@@ -1,11 +1,13 @@
+"use client";
 import axios from 'axios';
+import  { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowUpRight, TrendingUp, BarChart3, Heart } from "lucide-react"
 import { PortfolioChart } from "@/components/features/dashboard/portfolio-chart"
 import { StockTable } from "@/components/features/dashboard/stock-table"
 import { SentimentAnalysis } from "@/components/features/ai-insights/sentiment-analysis"
-import  { useEffect, useState } from "react";
+
 
 export default function DashboardPage() {
   const [portfolioValue, setPortfolioValue] = useState(null);
