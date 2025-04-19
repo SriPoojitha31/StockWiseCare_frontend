@@ -1,45 +1,41 @@
 # Frontend - StockWiseCare
 
-## Problem Statement
-The frontend serves as the dashboard for users to view their investment portfolio, market insights, and charity donations.
+## 🧠 Problem Statement
+The frontend acts as the user interface for viewing stock portfolio data, market sentiment, donation contributions, and interacting with a financial assistant chatbot.
 
-## Proposed Solution
-A responsive React application that communicates with the backend to display real-time data about stocks, portfolio performance, and charity donations.
+## ✅ Proposed Solution
+A responsive and modern React + Next.js application that dynamically fetches and displays portfolio-related data via API, while also offering chatbot support for financial guidance.
 
-## Tech Stack
-- React
+## 💻 Tech Stack
+- React.js
 - Next.js
 - Axios
 - Tailwind CSS
+- Framer Motion (optional for animations)
 
-## Core Features
-- **Portfolio Value**: Displays the total value of the user's portfolio.
-- **Today's Gain/Loss**: Shows the current day's gain or loss.
-- **Charity Donations**: Displays total donations.
-- **AI Market Insights**: Provides sentiment analysis for the user's holdings.
-- **Stock Table**: Displays a list of stock holdings.
+## 🚀 Core Features
+- **Portfolio Value**: Displays total portfolio worth.
+- **Today's Gain/Loss**: Visual indicator of today's market performance.
+- **Charity Donations**: Total amount donated.
+- **AI Market Insights**: Sentiment analysis on user holdings.
+- **Stock Table**: Interactive table listing stock details.
+- **Chatbot Assistant**: A conversational AI interface for finance-related questions.
 
-## Additional Features
-- Responsive design using Tailwind CSS.
-- Dynamic tabbed navigation for each section.
-- Interactive charts and data.
+## ✨ Additional Features
+- Responsive UI using Tailwind CSS.
+- Tabbed navigation for seamless section switching.
+- Smooth animations and interactive charts (optional).
+- Mobile-friendly layout.
 
-## Implementation
-- Data is fetched from the backend using `Axios` through GET requests.
-- State management with `useState` and `useEffect` hooks.
-- Implemented tabbed navigation for seamless user experience.
+## 🔧 Implementation
+- API calls using `Axios` from `https://stockwisecare-backend.onrender.com`.
+- State handled using `useState` and `useEffect`.
+- Chatbot integrated using a dedicated component (`/components/Chatbot.js`) that sends messages to the backend.
+- Conditional rendering and loading indicators used for better UX.
 
-## Deployment
-1. Deploy to Vercel or any similar platform.
-2. Ensure the API URL (`NEXT_PUBLIC_API_BASE_URL`) is set correctly in environment variables.
-3. Deployed link: https://stock-wise-care-frontend-jpmwhuao4-sripoojitha31s-projects.vercel.app
-
-## Integration with Backend
-The frontend communicates with the backend through Axios calls. It fetches data in JSON format, which is rendered on the frontend.
-
-## Notes
-While the frontend and backend are connected, some additional features like authentication and data validation need to be implemented.
-
-## Contacts 
-Linkdin: www.linkedin.com/in/sri-poojitha-jorige-377270294
-gmail: sripoojitha.2006@gmail.com
+## 🌐 Deployment
+- Deployed on **Vercel**:  
+  🔗 [Frontend Live](https://stock-wise-care-frontend-jpmwhuao4-sripoojitha31s-projects.vercel.app)
+- `.env` configuration:
+  ```bash
+  NEXT_PUBLIC_API_BASE_URL=https://stockwisecare-backend.onrender.com
