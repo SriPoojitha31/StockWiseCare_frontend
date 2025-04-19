@@ -32,9 +32,14 @@ A responsive React application that communicates with the backend to display rea
 ## Deployment
 1. Deploy to Vercel or any similar platform.
 2. Ensure the API URL (`NEXT_PUBLIC_API_BASE_URL`) is set correctly in environment variables.
+3. Deployed link: https://stock-wise-care-frontend-jpmwhuao4-sripoojitha31s-projects.vercel.app
 
 ## Integration with Backend
 The frontend communicates with the backend through Axios calls. It fetches data in JSON format, which is rendered on the frontend.
 
 ## Notes
 While the frontend and backend are connected, some additional features like authentication and data validation need to be implemented.
+
+## Contacts 
+Linkdin: www.linkedin.com/in/sri-poojitha-jorige-377270294
+gmail: sripoojitha.2006@gmail.com
