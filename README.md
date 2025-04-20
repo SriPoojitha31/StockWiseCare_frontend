@@ -42,5 +42,5 @@ A responsive and modern React + Next.js application that dynamically fetches and
 
 ## Contact
 - Linkdin Profile: www.linkedin.com/in/sri-poojitha-jorige-377270294
-- Team members Linkdin profiles: www.linkedin.com/in/cherisma-anamala-muni
+- Team members Linkdin profiles: www.linkedin.com/in/cherisma-anamala-muni, https://www.linkedin.com/in/shivathmikavelishala
 - Email: sripoojitha.2006@gmail.com
